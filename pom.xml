@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.proselyte.tutorials</groupId>
+  <artifactId>ServletsTutorial</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>Servlets Tutorial</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <javax.servlet.api.version>2.5</javax.servlet.api.version>
+    <tomcat.plugin.version>2.2</tomcat.plugin.version>
+
+    <maven.compiler.source>1.9</maven.compiler.source>
+    <maven.compiler.target>1.9</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>${javax.servlet.api.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <finalName>ServletsTutorial</finalName>
+
+    <plugins>
+      <!-- Tomcat plugin -->
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>${tomcat.plugin.version}</version>
+        <configuration>
+          <path>/</path>
+          <port>8088</port>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
